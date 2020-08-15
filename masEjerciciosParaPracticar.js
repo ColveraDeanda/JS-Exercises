@@ -1079,3 +1079,48 @@ function opposite(number) {
     console.log(max);
 }
 // hightAndLow("1 2 3 4 5");
+
+function isValidWalk(walk) {
+    let n = 0;
+    let s = 0;
+    let w = 0;
+    let e = 0;
+    if(walk.length == 10) {
+        for(let i = 0; i < walk.length; i++) {
+            if(walk[i] === "n") n++;
+            if(walk[i] === "s") s++;
+            if(walk[i] === "w") w++;
+            if(walk[i] === "e") e++;
+        }
+
+        if(n > 0 && s > 0 && w > 0 && e > 0 ) {
+            for(let i = 0; i < walk.length; i++) {
+                if(walk[i] === "n") n++;
+                if(walk[i] === "s") s--;
+                if(walk[i] === "w") w--;
+                if(walk[i] === "e") e++;
+            }
+            if(n + s + w + e === 10) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        if(n === 5 && s === 5 || w === 5 && e === 5) {
+            if((n + s) === 10 || (w + e) === 10) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
+isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 'n']); // false
+isValidWalk([ 'e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w' ]); // true
+isValidWalk([ 'n', 's', 'e', 'w', 'n', 's', 'e', 'w', 'n', 's' ]); // true
