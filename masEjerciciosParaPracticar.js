@@ -922,24 +922,24 @@ function solution(number) {
 function findOdd(arr) {
     let valor_max = 0;
     let count = 0;
-    for(let i = 0; i < arr.length; i++) {
-        for(let j = 0; j < arr.length; j++) {
-            if(arr[i] == arr[j]) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
                 count++;
             }
         }
-        if(count % 2 != 0) {
+        if (count % 2 != 0) {
             valor_max = arr[i];
             count = 0;
         }
     }
     console.log(valor_max);
     return valor_max;
-  }
+}
 
-  // findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]);
+// findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]);
 
-  function digital_root(n) {
+function digital_root(n) {
     let suma = 0;
     let arr = [];
     let num_str = "";
@@ -947,24 +947,24 @@ function findOdd(arr) {
         num_str = n.toString();
         arr = num_str.split("");
         // For para convertir elementos a enteros
-        for(let j = 0; j < arr.length; j++) {
+        for (let j = 0; j < arr.length; j++) {
             arr[j] = Number(arr[j]);
         }
         console.log(arr);
-        for(let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             suma += arr[i];
         }
         n = suma;
         suma = 0;
-    }while(n > 9); // Cuando es True se va a repetir
+    } while (n > 9); // Cuando es True se va a repetir
 
     console.log(n);
     return n;
-  }
+}
 
-  // digital_root(493193);
+// digital_root(493193);
 
-  function greet(name) {
+function greet(name) {
     let all_lower = name.toLowerCase();
     let toUpper = all_lower.charAt(0).toUpperCase();
     let to_lower = toUpper.toLowerCase();
@@ -977,12 +977,12 @@ function findOdd(arr) {
 // greet("CRIS");
 
 ///////////////////////////////////////////////////
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 }
 
-var greet = function(name) {
-return "Hello " + name.capitalize() + "!";
+var greet = function (name) {
+    return "Hello " + name.capitalize() + "!";
 };
 
 
@@ -990,13 +990,13 @@ return "Hello " + name.capitalize() + "!";
 function likes(names) {
     let len = names.length;
     let msj;
-    if(len == 0) {
+    if (len == 0) {
         msj = 'no one likes this';
-    } else if(len == 1) {
+    } else if (len == 1) {
         msj = `${names[0]} likes this`
-    } else if(len == 2) {
+    } else if (len == 2) {
         msj = `${names[0]} and ${names[1]} like this`;
-    } else if(len == 3) {
+    } else if (len == 3) {
         msj = `${names[0]}, ${names[1]} and ${names[2]} like this`
     } else {
         len = len - 2;
@@ -1032,8 +1032,8 @@ function findOutlier(arr) {
     let outlier_number;
 
     // Método para saber si es arreglo de pares ó inpares
-    for(let i = 0; i < 3; i++){
-        if(arr[i] % 2 == 0 || arr[i] == 0) {
+    for (let i = 0; i < 3; i++) {
+        if (arr[i] % 2 == 0 || arr[i] == 0) {
             par++;
         } else {
             inpar++;
@@ -1041,10 +1041,10 @@ function findOutlier(arr) {
     }
 
     // Arreglo de pares
-    if(par > inpar) {
+    if (par > inpar) {
         outlier_number = arr.filter(num => num % 2 != 0);
     } else {  // Arrelgo de inpares
-        outlier_number = arr.filter(num => num % 2 == 0) ;
+        outlier_number = arr.filter(num => num % 2 == 0);
     }
 
     return Number(outlier_number[0]);
@@ -1053,16 +1053,16 @@ function findOutlier(arr) {
 // findOutlier([0,1,2]);
 
 function opposite(number) {
-    if(number > 0) {
-      return -Math.abs(number);
+    if (number > 0) {
+        return -Math.abs(number);
     } else {
-      return Math.abs(number);
-     }
-  }
+        return Math.abs(number);
+    }
+}
 
-  // opposite(5);
+// opposite(5);
 
-  function hightAndLow(text) {
+function hightAndLow(text) {
     var arr_numbers = [];
     var max = 0;
     var arr = text.split(" ");
@@ -1085,30 +1085,30 @@ function isValidWalk(walk) {
     let s = 0;
     let w = 0;
     let e = 0;
-    if(walk.length == 10) {
-        for(let i = 0; i < walk.length; i++) {
-            if(walk[i] === "n") n++;
-            if(walk[i] === "s") s++;
-            if(walk[i] === "w") w++;
-            if(walk[i] === "e") e++;
+    if (walk.length == 10) {
+        for (let i = 0; i < walk.length; i++) {
+            if (walk[i] === "n") n++;
+            if (walk[i] === "s") s++;
+            if (walk[i] === "w") w++;
+            if (walk[i] === "e") e++;
         }
 
-        if(n > 0 && s > 0 && w > 0 && e > 0 ) {
-            for(let i = 0; i < walk.length; i++) {
-                if(walk[i] === "n") n++;
-                if(walk[i] === "s") s--;
-                if(walk[i] === "w") w--;
-                if(walk[i] === "e") e++;
+        if (n > 0 && s > 0 && w > 0 && e > 0) {
+            for (let i = 0; i < walk.length; i++) {
+                if (walk[i] === "n") n++;
+                if (walk[i] === "s") s--;
+                if (walk[i] === "w") w--;
+                if (walk[i] === "e") e++;
             }
-            if(n + s + w + e === 10) {
+            if (n + s + w + e === 10) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        if(n === 5 && s === 5 || w === 5 && e === 5) {
-            if((n + s) === 10 || (w + e) === 10) {
+        if (n === 5 && s === 5 || w === 5 && e === 5) {
+            if ((n + s) === 10 || (w + e) === 10) {
                 return true;
             } else {
                 return false;
@@ -1121,6 +1121,29 @@ function isValidWalk(walk) {
     }
 }
 
-isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 'n']); // false
-isValidWalk([ 'e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w' ]); // true
-isValidWalk([ 'n', 's', 'e', 'w', 'n', 's', 'e', 'w', 'n', 's' ]); // true
+// isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 'n']); // false
+// isValidWalk([ 'e', 'w', 'e', 'w', 'n', 's', 'n', 's', 'e', 'w' ]); // true
+// isValidWalk([ 'n', 's', 'e', 'w', 'n', 's', 'e', 'w', 'n', 's' ]); // true
+
+function songDecoder(song) {
+    let letter = song.split('WUB');
+    for (let i = 0; i < letter.length; i++) {
+        for (let j = 0; j < letter.length; j++) {
+            if (letter[j].length === 0) {
+                letter.splice(j, 1);
+            }
+        }
+    }
+    return letter.join(' ').trim();
+}
+
+// songDecoder('AWUBWUBWUBBWUBWUBWUBC'); // 'A B C'
+// songDecoder('AWUBBWUBC'); // 'A B C'
+// songDecoder('WUBAWUBBWUBCWUB'); // 'A B C'
+
+function songDecoderV2(song){
+    return song.split('WUB').filter(Boolean).join(' ');
+}
+
+songDecoderV2('AWUBWUBWUBBWUBWUBWUBC');
+
