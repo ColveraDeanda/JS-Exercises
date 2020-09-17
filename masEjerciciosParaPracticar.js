@@ -1141,9 +1141,80 @@ function songDecoder(song) {
 // songDecoder('AWUBBWUBC'); // 'A B C'
 // songDecoder('WUBAWUBBWUBCWUB'); // 'A B C'
 
-function songDecoderV2(song){
+function songDecoderV2(song) {
     return song.split('WUB').filter(Boolean).join(' ');
 }
 
-songDecoderV2('AWUBWUBWUBBWUBWUBWUBC');
+// songDecoderV2('AWUBWUBWUBBWUBWUBWUBC');
+
+function fibonacci(rep) {
+    let arr = [];
+    for (let i = 0; i < 2; i++) {
+        if (arr.length == 0) {
+            arr.push(0);
+        } else if (arr.length == 1) {
+            arr.push(1);
+        }
+    }
+    for (let k = 0; k <= rep - 2; k++) {
+        arr.push((arr[arr.length - 1]) + (arr[arr.length - 2]));
+    }
+    console.log(arr.join(' '));
+}
+
+function stringGen(input) {
+    let id = "";
+    for (let i = 0; i < input; i++) {
+        let option = Math.floor((Math.random() * 2) + 1);
+        if (option == 1) {
+            let number = Math.floor((Math.random() * 10));
+            id += String(number);
+        } else {
+            let letter = Math.floor((Math.random() * 25));
+            switch (letter) {
+                case 0: id += "a"; break;
+                case 1: id += "b"; break;
+                case 2: id += "c"; break;
+                case 3: id += "d"; break;
+                case 4: id += "e"; break;
+                case 5: id += "f"; break;
+                case 6: id += "g"; break;
+                case 7: id += "h"; break;
+                case 8: id += "i"; break;
+                case 9: id += "j"; break;
+                case 10: id += "k"; break;
+                case 11: id += "l"; break;
+                case 12: id += "m"; break;
+                case 13: id += "n"; break;
+                case 14: id += "o"; break;
+                case 15: id += "p"; break;
+                case 16: id += "q"; break;
+                case 17: id += "r"; break;
+                case 18: id += "s"; break;
+                case 19: id += "t"; break;
+                case 20: id += "u"; break;
+                case 21: id += "v"; break;
+                case 22: id += "w"; break;
+                case 23: id += "x"; break;
+                case 24: id += "y"; break;
+                case 25: id += "z"; break;
+            }
+        }
+    }
+    console.log(id);
+    return id;
+}
+
+
+// stringGen(10);
+
+
+function test10() {
+    var myVar = 'node package manager'; 
+    myVar = myVar.toUpperCase(); 
+    console.log(myVar);
+}
+
+test10();
+
 
