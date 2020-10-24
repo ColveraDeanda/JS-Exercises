@@ -1147,21 +1147,6 @@ function songDecoderV2(song) {
 
 // songDecoderV2('AWUBWUBWUBBWUBWUBWUBC');
 
-function fibonacci(rep) {
-    let arr = [];
-    for (let i = 0; i < 2; i++) {
-        if (arr.length == 0) {
-            arr.push(0);
-        } else if (arr.length == 1) {
-            arr.push(1);
-        }
-    }
-    for (let k = 0; k <= rep - 2; k++) {
-        arr.push((arr[arr.length - 1]) + (arr[arr.length - 2]));
-    }
-    console.log(arr.join(' '));
-}
-
 function stringGen(input) {
     let id = "";
     for (let i = 0; i < input; i++) {
@@ -1215,6 +1200,27 @@ function test10() {
     console.log(myVar);
 }
 
-test10();
+function fibonacci(rep) {
+    let arr = [];
+    let sum = 0;
+    for (let i = 0; i < 2; i++) {
+        if (arr.length == 0) {
+            arr.push(0);
+        } else if (arr.length == 1) {
+            arr.push(1);
+        }
+    }
+
+    for (let k = 0; k <= rep - 2; k++) {
+        let e = (arr[arr.length - 1]) + (arr[arr.length - 2]);
+        if(e % 2 == 0) {
+            sum += e;
+        }
+        arr.push((e));
+    }
+    console.log(sum);
+    console.log(arr.join(' '));
+}
+
 
 
